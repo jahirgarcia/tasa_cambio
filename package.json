@@ -1,0 +1,25 @@
+{
+  "name": "tipo_cambio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env PORT=8080 NODE_TLS_REJECT_UNAUTHORIZED=0 nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "express": "^4.17.1",
+    "fast-xml-parser": "^3.20.3",
+    "http-errors": "^1.7.2",
+    "http-status": "^1.5.0",
+    "soap": "^0.42.0",
+    "xml-js": "^1.6.11"
+  }
+}
