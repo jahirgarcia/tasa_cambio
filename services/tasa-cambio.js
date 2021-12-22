@@ -52,12 +52,22 @@ const getRequestBody = (year, month) => ({
   ]
 });
 
+const transformResponse = data => XML.parse(data, { ignoreNameSpace: true }).Envelope.Body
+  .RecuperaTC_MesResponse.RecuperaTC_MesResult.Detalle_TC.Tc
+  .map(tasa => ({
+    date: tasa.Fecha,
+    currency: tasa.Valor,
+    year: tasa.Ano,
+    month: tasa.Mes,
+    day: tasa.Dia
+  }))
+  .sort((a, b) => a.day - b.day);
+
 const options = {
   headers: {
     'Content-Type': 'text/xml'
   },
-  transformResponse: data => XML.parse(data)['soap:Envelope']['soap:Body']
-    .RecuperaTC_MesResponse.RecuperaTC_MesResult.Detalle_TC.Tc
+  transformResponse
 }
 
 module.exports = async (year, month) => post(

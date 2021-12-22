@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "cross-env PORT=8080 NODE_TLS_REJECT_UNAUTHORIZED=0 nodemon server.js"
+    "dev": "cross-env PORT=8085 NODE_TLS_REJECT_UNAUTHORIZED=0 nodemon server.js"
   },
   "keywords": [],
   "author": "",
